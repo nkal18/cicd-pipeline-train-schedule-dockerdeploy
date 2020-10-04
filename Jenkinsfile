@@ -39,6 +39,7 @@ stage('DeployToProduction') {
                 branch 'master'
             }
             steps {
+                echo 'deploying to prod'
                 input 'Deploy to Production?'
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
